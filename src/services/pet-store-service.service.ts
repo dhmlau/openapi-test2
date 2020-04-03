@@ -6,13 +6,19 @@ export interface PetStoreService {
   // this is where you define the Node.js methods that will be
   // mapped to REST/SOAP/gRPC operations as stated in the datasource
   // json file.
-  addPet(newPet: Pet): Promise<Pet>;
+  addPet(params: object, petBody: object): Promise<Response>;
+  getPetById(params: object): Promise<Response>;
+}
+
+export class Response {
+  status: number;
+  body: Pet;
 }
 
 export class Pet {
   id: number;
   name: string;
-  category: Category; //need to change
+  category: Category;
   photoUrl: string[];
   tags: Tag[];
   status: string;

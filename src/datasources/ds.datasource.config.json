@@ -1,7 +1,7 @@
 {
   "name": "ds",
   "connector": "openapi",
-  "spec": "http://petstore.swagger.io:8080/api/v3/openapi.json",
+  "spec": "./petstore.json",
   "validate": false,
   "positional": false
 }
